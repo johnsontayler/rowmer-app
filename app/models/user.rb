@@ -14,4 +14,7 @@ class User < ApplicationRecord
 
   #property manager
   has_many :properties, foreign_key: :property_manager_id
+  
+  #----
+  has_many :reviews
 end
