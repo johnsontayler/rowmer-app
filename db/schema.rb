@@ -10,14 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_011403) do
+ActiveRecord::Schema.define(version: 2019_10_20_021349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "properties", force: :cascade do |t|
+    t.string "address"
+    t.string "type"
+    t.integer "bathrooms"
+    t.integer "sq_feet"
+    t.string "description"
+    t.string "photo"
+    t.integer "property_manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "photo"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "interests"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
